@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Walunjkar - Data Science & DevOps Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .header-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section */
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        /* About */
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.4rem 0;
+            color: #555;
+        }
+
+        .skill-category li:before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .project {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .project:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .project h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project li {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin: 2rem 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+        }
+
+        .experience-company {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .experience-date {
+            color: #888;
+            font-style: italic;
+        }
+
+        .experience-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .experience-item li {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cert-item {
+            background: #667eea;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Contact */
+        .contact-info {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Harsh Walunjkar</h1>
+        <p>Data Science & DevOps Engineer | AI/ML Enthusiast | Cloud Specialist</p>
+        <div class="header-links">
+            <a href="mailto:harshwalunjkar12@gmail.com">📧 Email</a>
+            <a href="tel:+917040484874">📱 +91 7040484874</a>
+            <a href="https://www.linkedin.com/in/harsh-walunjkar" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/harshwalunjkar" target="_blank">💻 GitHub</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    Data Science aspirant with expertise in Python, SQL, and data visualization, supported by practical experience in AI model evaluation and cloud-based workflows. Proven ability to clean, analyze, and interpret complex datasets, enabling meaningful dashboards and support data-driven decision making.
+                </p>
+                <p style="margin-top: 1rem;">
+                    DevOps Engineer experienced in AWS infrastructure provisioning, Linux administration, Docker containerization, Terraform Infrastructure as Code, and Jenkins CI/CD pipelines. Skilled in automating deployments, managing cloud resources, and supporting scalable, secure AWS environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Science & ML</h3>
+                    <ul>
+                        <li>Pandas, NumPy, Seaborn</li>
+                        <li>Matplotlib, Power BI, EDA</li>
+                        <li>Descriptive Statistics</li>
+                        <li>Model Evaluation</li>
+                        <li>Probability</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Cloud</h3>
+                    <ul>
+                        <li>AWS (S3, EC2, IAM, Lambda, VPC)</li>
+                        <li>Docker, Jenkins</li>
+                        <li>Terraform, CI/CD</li>
+                        <li>Linux Administration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <ul>
+                        <li>Git, GitHub</li>
+                        <li>Excel</li>
+                        <li>Power BI</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="project">
+                <h3>Cloud-Based Data Analysis Pipeline using AWS & Docker</h3>
+                <p>Built a cloud-based data analysis pipeline using AWS S3 for data storage and EC2 for compute, enabling scalable data processing workflows.</p>
+                <ul>
+                    <li>Developed Python scripts to perform data ingestion, cleaning, and exploratory analysis using Pandas and NumPy</li>
+                    <li>Containerized the entire workflow using Docker to ensure portability and scalability</li>
+                    <li>Executed and validated the pipeline in a Linux-based environment with version control using Git</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">AWS S3</span>
+                    <span class="tech-tag">EC2</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Linux</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>End-to-End Sales Forecasting & Reporting Platform</h3>
+                <p>Designed and developed a comprehensive data analysis and forecasting solution for business intelligence.</p>
+                <ul>
+                    <li>Performed end-to-end sales data analysis using Python and SQL, including data cleaning, feature engineering, and exploratory data analysis</li>
+                    <li>Built and evaluated a sales forecasting model using regression-based approaches and performance metrics such as RMSE</li>
+                    <li>Integrated data into Power BI dashboards to communicate insights and forecasted trends to business users</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">Regression Analysis</span>
+                    <span class="tech-tag">EDA</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>AWS Cloud Infrastructure Automation and CI/CD Deployment</h3>
+                <p>Provisioned and automated AWS infrastructure for scalable cloud-based application deployments.</p>
+                <ul>
+                    <li>Provisioned AWS infrastructure including EC2, VPC, Security Groups, and IAM using Terraform</li>
+                    <li>Automated cloud resource management using Infrastructure as Code principles for consistent deployments</li>
+                    <li>Built and configured a Jenkins CI/CD pipeline to automate Docker image build and deployment</li>
+                    <li>Deployed and managed containerized applications on EC2 and Linux-based systems</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Terraform</span>
+                    <span class="tech-tag">Jenkins</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">CI/CD</span>
+                    <span class="tech-tag">Linux</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Cloud-Based Student Management System</h3>
+                <p>Developed a full-stack web application for managing student records and academic data.</p>
+                <ul>
+                    <li>Developed a Node.js-based Student Management System to manage student records and academic data</li>
+                    <li>Integrated the application with AWS S3 for data storage and retrieval, and SQL for data storage and retrieval</li>
+                    <li>Containerized the application using Docker for consistent development and deployment</li>
+                    <li>Deployed the application on AWS EC2 and managed the server using Linux commands</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">AWS S3</span>
+                    <span class="tech-tag">EC2</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Linux</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>Generative AI Engineer (Freelance)</h3>
+                        <p class="experience-company">Outlier</p>
+                    </div>
+                    <span class="experience-date">Dec 2024 - Jun 2025</span>
+                </div>
+                <ul>
+                    <li>Analyzed and evaluated large sets of AI-generated data to assess accuracy, relevance, and consistency using defined quality metrics</li>
+                    <li>Identified recurring patterns, edge cases, and error trends in model outputs</li>
+                    <li>Refined and optimized training workflows to provide cleaner and more structured QA for LLM outputs</li>
+                    <li>Contributed to iterative model evaluation workflows to enhance overall AI performance</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>Software Tester (Trainee)</h3>
+                        <p class="experience-company">Tayan Solutions</p>
+                    </div>
+                    <span class="experience-date">Apr 2024 - May 2024</span>
+                </div>
+                <ul>
+                    <li>Gained hands-on experience in manual testing with a focus on functionality, usability, and compatibility testing</li>
+                    <li>Analyzed test results and defect patterns to identify root causes and performance issues</li>
+                    <li>Created and executed structured test cases to ensure data accuracy and system reliability</li>
+                    <li>Collaborated with developers to communicate findings and support issue resolution</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>M.Sc. Computer Applications</h3>
+                        <p class="experience-company">VCACS, CGPA: 8.67</p>
+                    </div>
+                    <span class="experience-date">2023 - 2025</span>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>B.Sc. Computer Science</h3>
+                        <p class="experience-company">VCACS, CGPA: 8.67</p>
+                    </div>
+                    <span class="experience-date">Sep 2020 - Jun 2023</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">Python</div>
+                <div class="cert-item">SQL</div>
+                <div class="cert-item">AWS</div>
+                <div class="cert-item">Linux</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>📧 <a href="mailto:harshwalunjkar12@gmail.com">harshwalunjkar12@gmail.com</a></p>
+                <p>📱 +91 7040484874</p>
+                <p>📍 Pune, Maharashtra</p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://www.linkedin.com/in/harsh-walunjkar" target="_blank">LinkedIn</a> | 
+                    <a href="https://github.com/harshwalunjkar" target="_blank">GitHub</a>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Harsh Walunjkar. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built with passion for Data Science & DevOps</p>
+    </footer>
+</body>
+</html>
