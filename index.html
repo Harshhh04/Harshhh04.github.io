@@ -12,6 +12,13 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -19,7 +26,7 @@
             background: #f4f4f4;
         }
 
-        /* Header with Banner */
+        /* Header with Banner - FIXED */
         header {
             position: relative;
             color: white;
@@ -30,37 +37,44 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            width: 100%;
+            margin: 0;
         }
 
         .header-background {
             position: absolute;
             top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
             width: 100%;
             height: 100%;
             background-image: url('Banner.jpeg');
-            background-size: cover
-            background-position: center;
+            background-size: cover;
+            background-position: center center;
             background-repeat: no-repeat;
-            filter: brightness(0.4);
+            filter: brightness(0.45);
             z-index: 1;
         }
 
         .header-content {
             position: relative;
             z-index: 2;
+            max-width: 1200px;
+            width: 100%;
         }
 
         header h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+            font-weight: 700;
         }
 
         header p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
         }
 
         .header-links {
@@ -718,4 +732,3 @@
     </footer>
 </body>
 </html>
-
