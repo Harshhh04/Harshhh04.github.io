@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harsh Walunjkar - Data Science & DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -31,14 +32,13 @@
             overflow: hidden;
         }
 
-        /* Banner Background Image */
         .header-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('Banner.jpeg');
+            background-image: url('banner.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -46,7 +46,6 @@
             z-index: 1;
         }
 
-        /* Header Content (appears above banner) */
         .header-content {
             position: relative;
             z-index: 2;
@@ -103,6 +102,7 @@
             padding: 2.5rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         section h2 {
@@ -128,57 +128,160 @@
         }
 
         .skill-category {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
+            color: white;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .skill-category:hover::before {
+            top: -100%;
+            right: -100%;
         }
 
         .skill-category h3 {
-            color: #667eea;
             margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .skill-category ul {
             list-style: none;
+            position: relative;
+            z-index: 1;
         }
 
         .skill-category li {
             padding: 0.4rem 0;
-            color: #555;
         }
 
         .skill-category li:before {
-            content: "▹ ";
-            color: #667eea;
+            content: "✓ ";
             font-weight: bold;
+            margin-right: 0.5rem;
         }
 
-        /* Projects */
+        /* Projects with Icons */
         .project {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             padding: 2rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
+            margin: 2rem 0;
+            border-radius: 12px;
             border-left: 5px solid #667eea;
-            transition: all 0.3s;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
         }
 
         .project:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+            transform: translateX(10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Floating Tech Icons */
+        .tech-icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .tech-icons i {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .tech-icons i:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .tech-icons i:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Cloud Project Specific */
+        .project.cloud {
+            background: linear-gradient(135deg, #e0f7ff 0%, #b3e5fc 100%);
+            border-left-color: #00acc1;
+        }
+
+        .project.cloud .tech-icons {
+            color: #00acc1;
+        }
+
+        /* Data Science Project Specific */
+        .project.data-science {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left-color: #f57c00;
+        }
+
+        .project.data-science .tech-icons {
+            color: #f57c00;
+        }
+
+        /* DevOps Project Specific */
+        .project.devops {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left-color: #43a047;
+        }
+
+        .project.devops .tech-icons {
+            color: #43a047;
         }
 
         .project h3 {
-            color: #667eea;
-            font-size: 1.5rem;
+            color: #333;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+            color: #555;
         }
 
         .project ul {
             margin-left: 1.5rem;
             margin-top: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
         .project li {
@@ -191,14 +294,22 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
         .tech-tag {
-            background: #667eea;
+            background: rgba(0, 0, 0, 0.6);
             color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
             font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .tech-tag:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
         }
 
         /* Experience */
@@ -253,12 +364,19 @@
         }
 
         .cert-item {
-            background: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1rem;
+            padding: 1.5rem;
             border-radius: 8px;
             text-align: center;
             font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
         /* Contact */
@@ -271,19 +389,27 @@
             color: #667eea;
             text-decoration: none;
             font-weight: 500;
+            transition: all 0.3s;
         }
 
         .contact-info a:hover {
+            color: #764ba2;
             text-decoration: underline;
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
+        }
+
+        /* Skill Icons in Skills Section */
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
 
         /* Responsive */
@@ -304,6 +430,12 @@
                 padding: 1.5rem;
             }
 
+            .tech-icons {
+                font-size: 1.5rem;
+                top: 10px;
+                right: 10px;
+            }
+
             .experience-header {
                 flex-direction: column;
             }
@@ -311,16 +443,17 @@
             .container {
                 padding: 1rem;
             }
+
+            .project {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header with Banner -->
     <header>
-        <!-- Banner Background Image -->
         <div class="header-background"></div>
-        
-        <!-- Header Content -->
         <div class="header-content">
             <h1>Harsh Walunjkar</h1>
             <p>Data Science & DevOps Engineer | AI/ML Enthusiast | Cloud Specialist</p>
@@ -349,6 +482,7 @@
             <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
+                    <div class="skill-icon">💻</div>
                     <h3>Programming</h3>
                     <ul>
                         <li>Python</li>
@@ -356,6 +490,7 @@
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon">🤖</div>
                     <h3>Data Science & ML</h3>
                     <ul>
                         <li>Pandas, NumPy, Seaborn</li>
@@ -366,6 +501,7 @@
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon">☁️</div>
                     <h3>DevOps & Cloud</h3>
                     <ul>
                         <li>AWS (S3, EC2, IAM, Lambda, VPC)</li>
@@ -375,6 +511,7 @@
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon">🛠️</div>
                     <h3>Tools & Platforms</h3>
                     <ul>
                         <li>Git, GitHub</li>
@@ -390,7 +527,13 @@
         <section id="projects">
             <h2>Featured Projects</h2>
 
-            <div class="project">
+            <!-- Cloud + Data Project -->
+            <div class="project cloud">
+                <div class="tech-icons">
+                    <i class="fab fa-aws"></i>
+                    <i class="fab fa-docker"></i>
+                    <i class="fab fa-python"></i>
+                </div>
                 <h3>Cloud-Based Data Analysis Pipeline using AWS & Docker</h3>
                 <p>Built a cloud-based data analysis pipeline using AWS S3 for data storage and EC2 for compute, enabling scalable data processing workflows.</p>
                 <ul>
@@ -408,7 +551,13 @@
                 </div>
             </div>
 
-            <div class="project">
+            <!-- Data Science Project -->
+            <div class="project data-science">
+                <div class="tech-icons">
+                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-database"></i>
+                    <i class="fab fa-python"></i>
+                </div>
                 <h3>End-to-End Sales Forecasting & Reporting Platform</h3>
                 <p>Designed and developed a comprehensive data analysis and forecasting solution for business intelligence.</p>
                 <ul>
@@ -425,7 +574,13 @@
                 </div>
             </div>
 
-            <div class="project">
+            <!-- DevOps Project -->
+            <div class="project devops">
+                <div class="tech-icons">
+                    <i class="fab fa-aws"></i>
+                    <i class="fas fa-server"></i>
+                    <i class="fas fa-cogs"></i>
+                </div>
                 <h3>AWS Cloud Infrastructure Automation and CI/CD Deployment</h3>
                 <p>Provisioned and automated AWS infrastructure for scalable cloud-based application deployments.</p>
                 <ul>
@@ -444,7 +599,13 @@
                 </div>
             </div>
 
-            <div class="project">
+            <!-- Full Stack + Cloud Project -->
+            <div class="project cloud">
+                <div class="tech-icons">
+                    <i class="fab fa-node-js"></i>
+                    <i class="fab fa-aws"></i>
+                    <i class="fab fa-docker"></i>
+                </div>
                 <h3>Cloud-Based Student Management System</h3>
                 <p>Developed a full-stack web application for managing student records and academic data.</p>
                 <ul>
@@ -528,10 +689,10 @@
         <section id="certifications">
             <h2>Certifications</h2>
             <div class="cert-grid">
-                <div class="cert-item">Python</div>
-                <div class="cert-item">SQL</div>
-                <div class="cert-item">AWS</div>
-                <div class="cert-item">Linux</div>
+                <div class="cert-item">🐍 Python</div>
+                <div class="cert-item">🗄️ SQL</div>
+                <div class="cert-item">☁️ AWS</div>
+                <div class="cert-item">🐧 Linux</div>
             </div>
         </section>
 
@@ -557,4 +718,3 @@
     </footer>
 </body>
 </html>
-
