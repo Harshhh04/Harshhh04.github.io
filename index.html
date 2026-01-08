@@ -18,22 +18,50 @@
             background: #f4f4f4;
         }
 
-        /* Header */
+        /* Header with Banner */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
             color: white;
             padding: 4rem 2rem;
             text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Banner Background Image */
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('banner.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: brightness(0.4);
+            z-index: 1;
+        }
+
+        /* Header Content (appears above banner) */
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
         header p {
             font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
         }
 
         .header-links {
@@ -46,16 +74,19 @@
         .header-links a {
             color: white;
             text-decoration: none;
-            padding: 0.7rem 1.5rem;
-            background: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.8rem;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
             border-radius: 25px;
             transition: all 0.3s;
             font-weight: 500;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .header-links a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
         /* Container */
@@ -257,8 +288,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            header {
+                min-height: 400px;
+            }
+
             header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             header p {
@@ -280,15 +315,21 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with Banner -->
     <header>
-        <h1>Harsh Walunjkar</h1>
-        <p>Data Science & DevOps Engineer | AI/ML Enthusiast | Cloud Specialist</p>
-        <div class="header-links">
-            <a href="mailto:harshwalunjkar12@gmail.com">📧 Email</a>
-            <a href="tel:+917040484874">📱 +91 7040484874</a>
-            <a href="https://www.linkedin.com/in/harsh-walunjkar" target="_blank">💼 LinkedIn</a>
-            <a href="https://github.com/Harshhh04" target="_blank">💻 GitHub</a>
+        <!-- Banner Background Image -->
+        <div class="header-background"></div>
+        
+        <!-- Header Content -->
+        <div class="header-content">
+            <h1>Harsh Walunjkar</h1>
+            <p>Data Science & DevOps Engineer | AI/ML Enthusiast | Cloud Specialist</p>
+            <div class="header-links">
+                <a href="mailto:harshwalunjkar12@gmail.com">📧 Email</a>
+                <a href="tel:+917040484874">📱 +91 7040484874</a>
+                <a href="https://www.linkedin.com/in/harsh-walunjkar" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/Harshhh04" target="_blank">💻 GitHub</a>
+            </div>
         </div>
     </header>
 
@@ -298,7 +339,7 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <p>
-                    I'm someone who got curious about data science, fell down the AWS rabbit hole, and somehow ended up loving both equally. I spend my time making sense of messy datasets with Python and SQL, building cloud infrastructure that doesn't fall apart at 2 AM, and occasionally talking to Docker containers like they're stubborn pets. What excites me? Finding patterns in data that tell a real story, automating things that shouldn't be done manually (looking at you, deployment processes), and that satisfying moment when a CI/CD pipeline actually works on the first try. I believe good technology should solve real problems, not create new ones and that every error message is just a really aggressive teaching moment. When I'm not debugging or data wrangling, I'm probably learning something new, because in tech, standing still means falling behind, and I'm allergic to boredom.
+                    I'm someone who got curious about data science, fell down the AWS rabbit hole, and somehow ended up loving both equally. I spend my time making sense of messy datasets with Python and SQL, building cloud infrastructure that doesn't fall apart at 2 AM, and occasionally talking to Docker containers like they're stubborn pets. What excites me? Finding patterns in data that tell a real story, automating things that shouldn't be done manually (looking at you, deployment processes), and that satisfying moment when a CI/CD pipeline actually works on the first try. I believe good technology should solve real problems, not create new ones—and that every error message is just a really aggressive teaching moment. When I'm not debugging or data wrangling, I'm probably learning something new, because in tech, standing still means falling behind, and I'm allergic to boredom.
                 </p>
             </div>
         </section>
